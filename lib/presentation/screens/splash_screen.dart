@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
       const Duration(seconds: 4),
       () {
         if (mounted) {
-          context.go('/landing_screen');
+          context.go('/base_screen');
         }
       },
     );
