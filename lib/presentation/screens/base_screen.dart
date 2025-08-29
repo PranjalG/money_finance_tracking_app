@@ -1,3 +1,5 @@
+import 'package:expense_tracker/presentation/screens/landing_screen.dart';
+import 'package:expense_tracker/presentation/widgets/navbar.dart';
 import 'package:flutter/material.dart';
 
 class BaseScreen extends StatefulWidget {
@@ -7,13 +9,21 @@ class BaseScreen extends StatefulWidget {
   State<BaseScreen> createState() => _BaseScreenState();
 }
 
-class _BaseScreenState extends State<BaseScreen> with SingleTickerProviderStateMixin {
+class _BaseScreenState extends State<BaseScreen>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  int index = 0;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
+
+    _tabController.addListener(() {
+      setState(() {
+        index = _tabController.index;
+      });
+    });
   }
 
   @override
@@ -25,24 +35,23 @@ class _BaseScreenState extends State<BaseScreen> with SingleTickerProviderStateM
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Base Screen'),
-        bottom: TabBar(
-          controller: _tabController,
-          tabs: const [
-            Tab(icon: Icon(Icons.home), text: 'Home'),
-            Tab(icon: Icon(Icons.trending_up), text: 'Stats'),
-            Tab(icon: Icon(Icons.person), text: 'Profile'),
-          ],
-        ),
-      ),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: TabBarView(
         controller: _tabController,
         children: const [
-          Center(child: Text('Home Content')),
+          LandingScreen(),
           Center(child: Text('Stats Content')),
           Center(child: Text('Profile Content')),
         ],
+      ),
+      bottomNavigationBar: CustomBottomNavBar(
+        onTap: (newIndex) {
+          _tabController.animateTo(newIndex);
+          setState(() {
+            index = newIndex;
+          });
+        },
+        currentIndex: index,
       ),
     );
   }
