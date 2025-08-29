@@ -88,6 +88,7 @@ class MediumGradientButton extends StatelessWidget {
                           text,
                           style: const TextStyle(
                             fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.w400,
                             fontSize: 18,
                             color: Colors.white,
                           ),

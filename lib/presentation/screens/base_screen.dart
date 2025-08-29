@@ -1,4 +1,6 @@
 import 'package:expense_tracker/presentation/screens/landing_screen.dart';
+import 'package:expense_tracker/presentation/screens/profile_screen.dart';
+import 'package:expense_tracker/presentation/screens/wallet_info_screen.dart';
 import 'package:expense_tracker/presentation/widgets/navbar.dart';
 import 'package:flutter/material.dart';
 
@@ -40,8 +42,8 @@ class _BaseScreenState extends State<BaseScreen>
         controller: _tabController,
         children: const [
           LandingScreen(),
-          Center(child: Text('Stats Content')),
-          Center(child: Text('Profile Content')),
+          WalletInfoScreen(),
+          ProfileScreen(),
         ],
       ),
       bottomNavigationBar: CustomBottomNavBar(

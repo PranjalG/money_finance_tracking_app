@@ -3,20 +3,31 @@ import 'package:expense_tracker/presentation/widgets/spend_save_graph.dart';
 import 'package:flutter/material.dart';
 
 class ExpenseGraphCard extends StatelessWidget {
-  const ExpenseGraphCard({super.key});
+  final bool isDarkMode;
+
+  const ExpenseGraphCard({
+    super.key,
+    required this.isDarkMode,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 260,
       decoration: BoxDecoration(
-        color: Colors.grey.shade50,
+        color: isDarkMode
+            ? Colors.grey.shade900
+            : Colors.grey.shade50,
         borderRadius: BorderRadius.circular(40),
         boxShadow: [
+          isDarkMode
+              ? BoxShadow(
+            color: Colors.white.withValues(alpha: 0.4),
+            blurRadius: 20,
+            offset: const Offset(0, 2),
+          ) :
           BoxShadow(
-            color: themeNotifier.value == ThemeMode.dark
-                ? Colors.white
-                : Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 5),
           ),
@@ -27,21 +38,26 @@ class ExpenseGraphCard extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 20),
-            const Row(
+            Row(
               children: [
                 Text(
                   "Your total balance",
                   style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16,
-                      color: Colors.black45
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 16,
+                    color: themeNotifier.value == ThemeMode.dark
+                        ? Colors.white
+                        : Colors.black45,
                   ),
                 ),
-                SizedBox(width: 80),
+                const SizedBox(width: 80),
                 Icon(
                   Icons.more_horiz_rounded,
                   size: 16,
+                  color: isDarkMode
+                      ? Colors.white
+                      : Colors.black45,
                 )
               ],
             ),

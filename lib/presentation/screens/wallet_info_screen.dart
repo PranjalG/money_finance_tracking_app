@@ -10,6 +10,6 @@ class WalletInfoScreen extends StatefulWidget {
 class _WalletInfoScreenState extends State<WalletInfoScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Center(child: Text('Wallet Info Screen'));
   }
 }
