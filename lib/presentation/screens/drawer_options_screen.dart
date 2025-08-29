@@ -1,3 +1,4 @@
+import 'package:expense_tracker/presentation/widgets/theme_change_icon_button.dart';
 import 'package:flutter/material.dart';
 
 class DrawerOptionsScreen extends StatelessWidget {
@@ -18,6 +19,7 @@ class DrawerOptionsScreen extends StatelessWidget {
           //   child: Image.asset('assets/images/background.png'),
           // ),
         ),
+        const ThemeChangeIconButton(),
         const SizedBox(height: 10),
         const Text('Home'),
         const SizedBox(height: 20),

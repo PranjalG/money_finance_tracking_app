@@ -16,7 +16,7 @@ class LandingScreen extends StatelessWidget {
           backgroundColor: const Color(0xFF4960F9),
           leading: Builder(
             builder: (context) => IconButton(
-              icon: const Icon(Icons.menu),
+              icon: const Icon(Icons.menu, color: Colors.white),
               onPressed: () => Scaffold.of(context).openDrawer(),
             ),
           ),
@@ -49,26 +49,25 @@ class LandingScreen extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: 20,
-                  left: 50,
-                  child: Row(
-                    children: [
-                      const Text(
-                        "Good morning!,\nEmma",
-                        style: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontSize: 20,
-                          color: Colors.white,
+                    top: 20,
+                    left: 50,
+                    child: Row(
+                      children: [
+                        const Text(
+                          "Good morning!,\nEmma",
+                          style: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                      const SizedBox(width: 60),
-                      Image.asset(
-                        'assets/images/user_profile.png',
-                        height: 80,
-                      ),
-                    ],
-                  )
-                ),
+                        const SizedBox(width: 60),
+                        Image.asset(
+                          'assets/images/user_profile.png',
+                          height: 80,
+                        ),
+                      ],
+                    )),
                 Positioned(
                   top: MediaQuery.of(context).size.height * 0.18,
                   left: 30,

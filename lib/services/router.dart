@@ -1,6 +1,7 @@
 import 'package:expense_tracker/presentation/screens/base_screen.dart';
 import 'package:expense_tracker/presentation/screens/landing_screen.dart';
 import 'package:expense_tracker/presentation/screens/splash_screen.dart';
+import 'package:expense_tracker/presentation/screens/welcome_screen.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter router = GoRouter(
@@ -12,6 +13,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/base_screen',
       builder: (context, state) => const BaseScreen(),
+    ),
+    GoRoute(
+      path: '/welcome',
+      builder: (context, state) => const WelcomeScreen(),
     ),
     GoRoute(
         path: '/landing_screen',
