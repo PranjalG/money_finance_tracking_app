@@ -1,10 +1,11 @@
-import 'package:expense_tracker/presentation/widgets/small_button.dart';
-import 'package:expense_tracker/presentation/widgets/small_gradient_button.dart';
+import 'package:expense_tracker/presentation/widgets/email_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+import '../widgets/small_gradient_button.dart';
+
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +16,8 @@ class WelcomeScreen extends StatelessWidget {
           children: [
             // Background
             Image.asset(
-              'assets/images/background_medium.png',
-              fit: BoxFit.cover,
-              width: double.infinity,
-              height: double.infinity,
+              'assets/images/background_small.png',
+              width: MediaQuery.of(context).size.width * 0.95,
             ),
             // Foreground content
             Padding(
@@ -41,15 +40,30 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                   ),
                   const Spacer(),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'Sign in',
+                          style: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.w800,
+                            fontSize: 24,
+                            color: Colors.black,
+                          ),
+                        ),
+                        EmailTextField(
+                          label: "Enter email",
+                          onTap: () {},
+                        ),
+                      ],
+                    ),
+                  ),
                   SmallGradientButton(
                     text: 'Sign in',
-                    onTap: () {
-                      context.push('/welcome/sign_in_screen');
-                    },
-                  ),
-                  const SizedBox(height: 20),
-                  SmallButton(
-                    text: 'Sign up',
                     onTap: () {
                       context.push('/base_screen');
                     },
