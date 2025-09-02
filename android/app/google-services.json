@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1028068402405",
+    "project_id": "money-expense-tracker-dab32",
+    "storage_bucket": "money-expense-tracker-dab32.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028068402405:android:54ed3ca19b4d8e685ae00c",
+        "android_client_info": {
+          "package_name": "com.pranjal.money"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1028068402405-ujt3a66ovdnfhdkii7o9biesoq7uucnu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdbjx2muWiUVZ5xOwoorZ9oJHYAmY75-s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1028068402405-ujt3a66ovdnfhdkii7o9biesoq7uucnu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
