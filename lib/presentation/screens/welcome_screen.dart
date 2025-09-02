@@ -51,7 +51,7 @@ class WelcomeScreen extends StatelessWidget {
                   SmallButton(
                     text: 'Sign up',
                     onTap: () {
-                      context.push('/base_screen');
+                      context.push('/welcome/base_screen');
                     },
                   ),
                 ],

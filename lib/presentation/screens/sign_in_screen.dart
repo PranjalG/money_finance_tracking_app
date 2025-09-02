@@ -59,6 +59,11 @@ class SignInScreen extends StatelessWidget {
                           label: "Enter email",
                           onTap: () {},
                         ),
+                        const SizedBox(height: 10),
+                        EmailTextField(
+                          label: "Enter password",
+                          onTap: () {},
+                        ),
                       ],
                     ),
                   ),
