@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1028068402405:android:54ed3ca19b4d8e685ae00c",
         "android_client_info": {
-          "package_name": "com.pranjal.money"
+          "package_name": "com.example.money"
         }
       },
       "oauth_client": [
@@ -31,10 +31,10 @@
               "client_type": 3
             },
             {
-              "client_id": "1028068402405-kfp8trprgh22h2vcj22mcj0ikdo71mkp.apps.googleusercontent.com",
+              "client_id": "1028068402405-jpid9p93198e8dfj38mmttdohgkv0p0r.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.pranjal.money"
+                "bundle_id": "com.example.money"
               }
             }
           ]

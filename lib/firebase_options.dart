@@ -87,4 +87,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'money-expense-tracker-dab32.firebasestorage.app',
     measurementId: 'G-2HVFPT4YH4',
   );
+
 }

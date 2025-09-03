@@ -3,28 +3,30 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../presentation/screens/splash_screen.dart';
+
 class AuthGate extends StatelessWidget {
-  final String clientId;
+  // final String clientId;
   final GoRouter router;
 
   const AuthGate({
     super.key,
-    required this.clientId,
+    // required this.clientId,
     required this.router,
   });
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<User?>(                                       // Modify from here...
+    return StreamBuilder<User?>(
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
             return const SignInScreen();
-
         }
-        return MaterialApp.router(
-          routerConfig: router,
-        );
+        return const SplashScreen();
+        //   MaterialApp.router(
+        //   routerConfig: router,
+        // );
       },
     );
   }

@@ -5,20 +5,22 @@ import 'package:flutter/material.dart';
 import 'firebase_options.dart';
 
 final ValueNotifier<ThemeMode> themeNotifier = ValueNotifier(ThemeMode.system);
-const clientId = '1:1028068402405:android:54ed3ca19b4d8e685ae00c';
+// const clientId = '1:1028068402405:android:54ed3ca19b4d8e685ae00c';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const ExpenseTrackerApp(clientId: clientId));
+  runApp(const ExpenseTrackerApp(
+      // clientId: clientId,
+      ));
 }
 
 class ExpenseTrackerApp extends StatelessWidget {
-  final String clientId;
+  // final String clientId;
 
   const ExpenseTrackerApp({
     super.key,
-    required this.clientId,
+    // required this.clientId,
   });
 
   @override
@@ -47,10 +49,9 @@ class ExpenseTrackerApp extends StatelessWidget {
           ),
           themeMode: currentMode,
           home: AuthGate(
-            clientId: clientId,
+            // clientId: clientId,
             router: router,
           ),
-          // routerConfig: router,
         );
       },
     );
