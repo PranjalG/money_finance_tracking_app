@@ -5,12 +5,14 @@ class SignInState extends Equatable {
   final String password;
   final bool isSubmitting;
   final String? errorMessage;
+  final bool changeScreen;
 
   const SignInState({
     this.email = '',
     this.password = '',
     this.isSubmitting = false,
     this.errorMessage,
+    this.changeScreen = false,
   });
 
   SignInState copyWith({
@@ -18,12 +20,14 @@ class SignInState extends Equatable {
     String? password,
     bool? isSubmitting,
     String? errorMessage,
+    bool? changeScreen,
   }) {
     return SignInState(
       email: email ?? this.email,
       password: password ?? this.password,
       isSubmitting: isSubmitting ?? this.isSubmitting,
-      errorMessage: errorMessage,
+      errorMessage: errorMessage ?? this.errorMessage,
+      changeScreen: changeScreen ?? this.changeScreen,
     );
   }
 
@@ -33,5 +37,6 @@ class SignInState extends Equatable {
         password,
         isSubmitting,
         errorMessage,
+        changeScreen,
       ];
 }

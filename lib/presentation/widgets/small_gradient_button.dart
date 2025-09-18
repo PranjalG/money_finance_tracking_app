@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class SmallGradientButton extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
+  final bool? isLoading;
 
   const SmallGradientButton({
     super.key,
     required this.text,
     required this.onTap,
+    this.isLoading = false,
   });
 
   @override
@@ -15,7 +17,7 @@ class SmallGradientButton extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.08,
       child: GestureDetector(
-        onTap: onTap,
+        onTap: isLoading! ? null : onTap,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(30),
           child: Container(
@@ -71,13 +73,18 @@ class SmallGradientButton extends StatelessWidget {
                           Color(0xFF3AF9EF),
                         ],
                       ),
-                      color: Color(0xAA20E2D7), // cyan with transparency
+                      color: Color(0xAA20E2D7),
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 30, right: 20),
-                  child: Center(
+                Center(
+                  child: isLoading!
+                      ? const CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                    strokeWidth: 2.5,
+                  )
+                      : Padding(
+                    padding: const EdgeInsets.only(left: 30, right: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

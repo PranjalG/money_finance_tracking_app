@@ -3,11 +3,17 @@ import 'package:flutter/material.dart';
 class SmallButton extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
+  final IconData? icon;
+  final double? iconSize;
+  final double? verticalPadding;
 
   const SmallButton({
     super.key,
     required this.text,
     required this.onTap,
+    this.icon,
+    this.iconSize,
+    this.verticalPadding,
   });
 
   @override
@@ -17,7 +23,7 @@ class SmallButton extends StatelessWidget {
       child: Container(
         height: MediaQuery.of(context).size.height * 0.078,
         width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 34, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: 34, vertical: verticalPadding ?? 20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           border: Border.all(
@@ -38,10 +44,10 @@ class SmallButton extends StatelessWidget {
                 color: Color(0xFF4960F9),
               ),
             ),
-            const Icon(
-              Icons.arrow_forward,
-              color: Color(0xFF4960F9),
-              size: 18,
+            Icon(
+              icon ?? Icons.arrow_forward,
+              color: const Color(0xFF4960F9),
+              size: iconSize ?? 18,
             ),
           ],
         ),

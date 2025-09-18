@@ -1,4 +1,3 @@
-import 'package:expense_tracker/presentation/screens/sign_in_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -6,27 +5,30 @@ import 'package:go_router/go_router.dart';
 import '../../presentation/screens/splash_screen.dart';
 
 class AuthGate extends StatelessWidget {
-  // final String clientId;
-  final GoRouter router;
-
-  const AuthGate({
-    super.key,
-    // required this.clientId,
-    required this.router,
-  });
+  const AuthGate({super.key});
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<User?>(
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
-        if (!snapshot.hasData) {
-            return const SignInScreen();
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const SplashScreen();
         }
-        return const SplashScreen();
-        //   MaterialApp.router(
-        //   routerConfig: router,
-        // );
+
+        if (snapshot.hasData) {
+          // logged in
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            context.go('/base_screen');
+          });
+        } else {
+          // logged out
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            context.go('/sign_in_screen');
+          });
+        }
+
+        return const SizedBox.shrink();
       },
     );
   }

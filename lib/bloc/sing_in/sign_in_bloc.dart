@@ -19,6 +19,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     on<EmailChangeEvent>(_onEmailChangeEvent);
     on<PasswordChangeEvent>(_onPasswordChangeEvent);
     on<SignInSubmitEvent>(_onSignInSubmitEvent);
+    on<ChangeScreenEvent>(_onChangeScreenEvent);
   }
 
   void _onEmailChangeEvent(
@@ -33,6 +34,10 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     Emitter<SignInState> emit,
   ) {
     emit(state.copyWith(password: event.password, errorMessage: null));
+  }
+
+  void _onChangeScreenEvent(ChangeScreenEvent event, Emitter<SignInState> emit) {
+    emit(state.copyWith(changeScreen: event.changeScreen));
   }
 
   Future<void> _onSignInSubmitEvent(

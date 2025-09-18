@@ -20,3 +20,9 @@ class PasswordChangeEvent extends SignInEvent {
 }
 
 class SignInSubmitEvent extends SignInEvent {}
+
+class ChangeScreenEvent extends SignInEvent {
+  final bool changeScreen;
+
+  const ChangeScreenEvent({required this.changeScreen});
+}
