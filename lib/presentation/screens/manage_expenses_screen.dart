@@ -135,6 +135,7 @@ class _ManageExpensesScreenState extends State<ManageExpensesScreen> {
         itemBuilder: (context, index) {
           final category = _categories[index];
           return Card(
+            color: Colors.white,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
@@ -154,10 +155,10 @@ class _ManageExpensesScreenState extends State<ManageExpensesScreen> {
                       Text(
                         category["name"],
                         style: const TextStyle(
-                          fontSize: 14,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w600,
-                        ),
+                            fontSize: 14,
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.w600,
+                            color: Colors.black),
                       ),
                     ],
                   ),
@@ -176,7 +177,9 @@ class _ManageExpensesScreenState extends State<ManageExpensesScreen> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color(0xFF44E3F3),
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? const Color(0xFF4A00E0)
+            : const Color(0xFF44E3F3),
         foregroundColor: Colors.white70,
         onPressed: _addCategory,
         child: const Icon(Icons.add),
