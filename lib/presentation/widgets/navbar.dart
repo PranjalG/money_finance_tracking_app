@@ -45,7 +45,7 @@ class CustomBottomNavBar extends StatelessWidget {
                   isSelected: currentIndex == 0,
                 ),
                 _buildAnimatedIcon(
-                  icon: Icons.notifications_none,
+                  icon: Icons.tune,
                   isSelected: currentIndex == 1,
                 ),
                 _buildAnimatedIcon(
