@@ -33,10 +33,13 @@ Flutter mobile app with intuitive UI that helps user categorize expenses and get
 
 
 
+
 5. Landing page - Light and Dark Mode
 6. 
 <img src="https://github.com/user-attachments/assets/562103dc-b65d-4cbc-b043-1a53c8fcac88" alt="login_screen_debug" height="500"/>
-<img src="https://github.com/user-attachments/assets/9c6654af-0ea8-4af2-9e5a-79dc0f514585" alt="login_screen_debug" height="500"/>![1000000524](https://github.com/user-attachments/assets/df940e10-88a9-4a6b-b354-bfad92642533)
+<img src="https://github.com/user-attachments/assets/9c6654af-0ea8-4af2-9e5a-79dc0f514585" alt="login_screen_debug" height="500"/>
+
+
 
 
 
@@ -53,3 +56,4 @@ Flutter mobile app with intuitive UI that helps user categorize expenses and get
 
 <img src="https://github.com/user-attachments/assets/35af69fc-54dc-49a0-a940-1ec65df5aeaa" alt="login_screen_debug" height="500"/>
 <img src="https://github.com/user-attachments/assets/99f5f2e9-fa99-4a5d-9f5e-5494d57ec1a8" alt="login_screen_debug" height="500"/>
+
